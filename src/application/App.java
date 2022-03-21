@@ -4,27 +4,20 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import entities.Product;
+
 public class App {
 
 	public static void main(String[] args) {
+		Set<Product> set = new LinkedHashSet<>();
 		
-		//HashSet -> Fast but don't sort
-//		Set<String> set = new HashSet<>();
+		set.add(new Product("TV", 1200.00));
+		set.add(new Product("Notebook", 2200.00));
+		set.add(new Product("Book", 120.00));
 		
-		//LinkedHashSet -> not so fast but sorted
-		Set<String> set = new LinkedHashSet<>();
+		Product prod= new Product("Book", 120.00);
 		
-		set.add("TV");
-		set.add("Notebook");
-		set.add("Book");
-		
-		set.removeIf(x -> x.charAt(0) == 'B');
-		
-		
-		for (String p : set) {
-			System.out.println(p);
-		}
-		
+		System.out.println(set.contains(prod));		
 		
 	}
 
